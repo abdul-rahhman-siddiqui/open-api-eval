@@ -4,6 +4,7 @@ import api from "../api/api";
 export default function Report() {
   const [logs, setLogs] = useState([]);
   const [statusSummary, setStatusSummary] = useState({});
+  const [uniqueEndpoints, setUniqueEndpoints] = useState(0);
 
   useEffect(() => {
     api.get("/report/logs").then((res) => {
@@ -13,11 +14,19 @@ export default function Report() {
       const summary = {};
       let successCount = 0;
 
+      // Collect unique endpoint+method combinations
+      const endpointSet = new Set();
+
       res.data.forEach((log) => {
         const code = log.status;
         summary[code] = (summary[code] || 0) + 1;
         if (log.status >= 200 && log.status < 300) successCount++;
+
+        // Unique endpoint: path + method
+        endpointSet.add(`${log.path} ${log.method?.toUpperCase()}`);
       });
+
+      setUniqueEndpoints(endpointSet.size);
 
       setStatusSummary({
         total: res.data.length,
@@ -36,7 +45,11 @@ export default function Report() {
 
       <div className="bg-white shadow rounded p-4 mb-6">
         <h3 className="font-semibold text-lg mb-2">Endpoint Summary</h3>
-        <p>Total Endpoints: <strong>{Object.keys(statusSummary.codes || {}).length}</strong></p>
+        <p>
+          Total unique endpoints:{" "}
+          <strong className="text-blue-600">{uniqueEndpoints}</strong>
+        </p>
+        
         <p className="text-green-600">Success: <strong>{statusSummary.success}</strong></p>
         <p className="text-red-600">Failed: <strong>{statusSummary.failed}</strong></p>
         <p>Overall Success Rate: <span className="text-blue-700 font-bold">{successRate.toFixed(2)}%</span></p>
