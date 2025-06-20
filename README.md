@@ -53,14 +53,7 @@ npm install
 npm run dev
 ```
 
-### 4. (Optional) Node.js RAG Backend
 
-```sh
-cd rest-api-evaluator/node-rag-backend
-npm install
-cp .env.example .env   # Add your GOOGLE_API_KEY
-npm start
-```
 
 ## Usage
 
