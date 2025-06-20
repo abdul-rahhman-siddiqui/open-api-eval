@@ -1,0 +1,821 @@
+[33mWARNING[0m:  [19-06-2025 01:48:20] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [19-06-2025 01:48:20] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [19-06-2025 01:48:20] Starting component System
+[36mDEBUG[0m:    [19-06-2025 01:48:20] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [19-06-2025 01:48:20] Starting component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 01:48:20] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 01:48:20] Starting component Posthog
+[36mDEBUG[0m:    [19-06-2025 01:48:20] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 01:48:20] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 01:48:20] Starting component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 01:48:20] Starting component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 01:48:20] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [19-06-2025 01:48:21] Started server process [[36m15864[0m]
+[32mINFO[0m:     [19-06-2025 01:48:21] Waiting for application startup.
+[32mINFO[0m:     [19-06-2025 01:48:21] Application startup complete.
+[32mINFO[0m:     [19-06-2025 01:48:21] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[31mERROR[0m:    [19-06-2025 01:48:59] '_type'
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 111, in receive
+    return self.receive_nowait()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 106, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 124, in receive
+    return receiver.item
+AttributeError: 'MemoryObjectItemReceiver' object has no attribute 'item'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 148, in call_next
+    message = await recv_stream.receive()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 120, in catch_exceptions_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 177, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\anaconda3\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 144, in check_http_version_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 134, in async_wrapper
+    return await f(*args, **kwargs)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 798, in create_collection
+    await to_thread.run_sync(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 2461, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 962, in run
+    result = context.run(func, *args)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 772, in process_create_collection
+    else CollectionConfigurationInternal.from_json(create.configuration)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\api\configuration.py", line 209, in from_json
+    f"Trying to instantiate configuration of type {cls.__name__} from JSON with type {json_map['_type']}"
+KeyError: '_type'
+[32mINFO[0m:     [19-06-2025 01:48:59] ::1:55328 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 500
+[31mERROR[0m:    [19-06-2025 01:57:04] '_type'
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 111, in receive
+    return self.receive_nowait()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 106, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 124, in receive
+    return receiver.item
+AttributeError: 'MemoryObjectItemReceiver' object has no attribute 'item'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 148, in call_next
+    message = await recv_stream.receive()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 120, in catch_exceptions_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 177, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\anaconda3\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 144, in check_http_version_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 134, in async_wrapper
+    return await f(*args, **kwargs)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 798, in create_collection
+    await to_thread.run_sync(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 2461, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 962, in run
+    result = context.run(func, *args)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 772, in process_create_collection
+    else CollectionConfigurationInternal.from_json(create.configuration)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\api\configuration.py", line 209, in from_json
+    f"Trying to instantiate configuration of type {cls.__name__} from JSON with type {json_map['_type']}"
+KeyError: '_type'
+[32mINFO[0m:     [19-06-2025 01:57:04] ::1:55579 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 500
+[32mINFO[0m:     [19-06-2025 01:57:51] Shutting down
+[32mINFO[0m:     [19-06-2025 01:57:51] Waiting for application shutdown.
+[36mDEBUG[0m:    [19-06-2025 01:57:51] Stopping component System
+[36mDEBUG[0m:    [19-06-2025 01:57:51] Stopping component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 01:57:51] Stopping component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 01:57:51] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 01:57:51] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 01:57:51] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 01:57:51] Stopping component Posthog
+[36mDEBUG[0m:    [19-06-2025 01:57:51] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 01:57:51] Stopping component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 01:57:51] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [19-06-2025 01:57:51] Application shutdown complete.
+[32mINFO[0m:     [19-06-2025 01:57:51] Finished server process [[36m15864[0m]
+[33mWARNING[0m:  [19-06-2025 01:58:02] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [19-06-2025 01:58:02] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [19-06-2025 01:58:02] Starting component System
+[36mDEBUG[0m:    [19-06-2025 01:58:02] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [19-06-2025 01:58:02] Starting component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 01:58:02] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 01:58:02] Starting component Posthog
+[36mDEBUG[0m:    [19-06-2025 01:58:02] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 01:58:02] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 01:58:02] Starting component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 01:58:02] Starting component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 01:58:02] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [19-06-2025 01:58:02] Started server process [[36m24508[0m]
+[32mINFO[0m:     [19-06-2025 01:58:02] Waiting for application startup.
+[32mINFO[0m:     [19-06-2025 01:58:02] Application startup complete.
+[32mINFO[0m:     [19-06-2025 01:58:02] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[31mERROR[0m:    [19-06-2025 01:59:21] '_type'
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 111, in receive
+    return self.receive_nowait()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 106, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 124, in receive
+    return receiver.item
+AttributeError: 'MemoryObjectItemReceiver' object has no attribute 'item'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 148, in call_next
+    message = await recv_stream.receive()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 120, in catch_exceptions_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 177, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\anaconda3\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 144, in check_http_version_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 134, in async_wrapper
+    return await f(*args, **kwargs)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 798, in create_collection
+    await to_thread.run_sync(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 2461, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 962, in run
+    result = context.run(func, *args)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 772, in process_create_collection
+    else CollectionConfigurationInternal.from_json(create.configuration)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\api\configuration.py", line 209, in from_json
+    f"Trying to instantiate configuration of type {cls.__name__} from JSON with type {json_map['_type']}"
+KeyError: '_type'
+[32mINFO[0m:     [19-06-2025 01:59:21] ::1:55640 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 500
+[31mERROR[0m:    [19-06-2025 02:02:19] '_type'
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 111, in receive
+    return self.receive_nowait()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 106, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 124, in receive
+    return receiver.item
+AttributeError: 'MemoryObjectItemReceiver' object has no attribute 'item'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 148, in call_next
+    message = await recv_stream.receive()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 120, in catch_exceptions_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 177, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\anaconda3\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 144, in check_http_version_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 134, in async_wrapper
+    return await f(*args, **kwargs)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 798, in create_collection
+    await to_thread.run_sync(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 2461, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 962, in run
+    result = context.run(func, *args)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 772, in process_create_collection
+    else CollectionConfigurationInternal.from_json(create.configuration)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\api\configuration.py", line 209, in from_json
+    f"Trying to instantiate configuration of type {cls.__name__} from JSON with type {json_map['_type']}"
+KeyError: '_type'
+[32mINFO[0m:     [19-06-2025 02:02:19] ::1:55722 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 500
+[32mINFO[0m:     [19-06-2025 02:02:39] Shutting down
+[32mINFO[0m:     [19-06-2025 02:02:39] Waiting for application shutdown.
+[36mDEBUG[0m:    [19-06-2025 02:02:39] Stopping component System
+[36mDEBUG[0m:    [19-06-2025 02:02:39] Stopping component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 02:02:39] Stopping component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 02:02:39] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 02:02:39] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:02:39] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:02:39] Stopping component Posthog
+[36mDEBUG[0m:    [19-06-2025 02:02:39] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:02:39] Stopping component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 02:02:39] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [19-06-2025 02:02:39] Application shutdown complete.
+[32mINFO[0m:     [19-06-2025 02:02:39] Finished server process [[36m24508[0m]
+[33mWARNING[0m:  [19-06-2025 02:02:43] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [19-06-2025 02:02:43] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [19-06-2025 02:02:43] Starting component System
+[36mDEBUG[0m:    [19-06-2025 02:02:43] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [19-06-2025 02:02:43] Starting component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 02:02:43] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:02:43] Starting component Posthog
+[36mDEBUG[0m:    [19-06-2025 02:02:43] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:02:43] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 02:02:43] Starting component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 02:02:43] Starting component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 02:02:43] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [19-06-2025 02:02:43] Started server process [[36m360[0m]
+[32mINFO[0m:     [19-06-2025 02:02:43] Waiting for application startup.
+[32mINFO[0m:     [19-06-2025 02:02:43] Application startup complete.
+[32mINFO[0m:     [19-06-2025 02:02:43] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[31mERROR[0m:    [19-06-2025 02:02:56] '_type'
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 111, in receive
+    return self.receive_nowait()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 106, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 124, in receive
+    return receiver.item
+AttributeError: 'MemoryObjectItemReceiver' object has no attribute 'item'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 148, in call_next
+    message = await recv_stream.receive()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 120, in catch_exceptions_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 177, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\anaconda3\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 144, in check_http_version_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 134, in async_wrapper
+    return await f(*args, **kwargs)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 798, in create_collection
+    await to_thread.run_sync(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 2461, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 962, in run
+    result = context.run(func, *args)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 772, in process_create_collection
+    else CollectionConfigurationInternal.from_json(create.configuration)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\api\configuration.py", line 209, in from_json
+    f"Trying to instantiate configuration of type {cls.__name__} from JSON with type {json_map['_type']}"
+KeyError: '_type'
+[32mINFO[0m:     [19-06-2025 02:02:56] ::1:55765 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 500
+[32mINFO[0m:     [19-06-2025 02:03:53] Shutting down
+[32mINFO[0m:     [19-06-2025 02:03:53] Waiting for application shutdown.
+[36mDEBUG[0m:    [19-06-2025 02:03:53] Stopping component System
+[36mDEBUG[0m:    [19-06-2025 02:03:53] Stopping component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 02:03:53] Stopping component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 02:03:53] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 02:03:53] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:03:53] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:03:53] Stopping component Posthog
+[36mDEBUG[0m:    [19-06-2025 02:03:53] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:03:53] Stopping component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 02:03:53] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [19-06-2025 02:03:53] Application shutdown complete.
+[32mINFO[0m:     [19-06-2025 02:03:53] Finished server process [[36m360[0m]
+[33mWARNING[0m:  [19-06-2025 02:03:56] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [19-06-2025 02:03:56] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [19-06-2025 02:03:56] Starting component System
+[36mDEBUG[0m:    [19-06-2025 02:03:56] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [19-06-2025 02:03:56] Starting component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 02:03:56] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:03:56] Starting component Posthog
+[36mDEBUG[0m:    [19-06-2025 02:03:56] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:03:56] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 02:03:56] Starting component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 02:03:56] Starting component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 02:03:56] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [19-06-2025 02:03:56] Started server process [[36m2052[0m]
+[32mINFO[0m:     [19-06-2025 02:03:56] Waiting for application startup.
+[32mINFO[0m:     [19-06-2025 02:03:56] Application startup complete.
+[32mINFO[0m:     [19-06-2025 02:03:56] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[31mERROR[0m:    [19-06-2025 02:04:04] '_type'
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 111, in receive
+    return self.receive_nowait()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 106, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 124, in receive
+    return receiver.item
+AttributeError: 'MemoryObjectItemReceiver' object has no attribute 'item'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 148, in call_next
+    message = await recv_stream.receive()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 120, in catch_exceptions_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 177, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\anaconda3\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 144, in check_http_version_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 134, in async_wrapper
+    return await f(*args, **kwargs)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 798, in create_collection
+    await to_thread.run_sync(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 2461, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 962, in run
+    result = context.run(func, *args)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 772, in process_create_collection
+    else CollectionConfigurationInternal.from_json(create.configuration)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\api\configuration.py", line 209, in from_json
+    f"Trying to instantiate configuration of type {cls.__name__} from JSON with type {json_map['_type']}"
+KeyError: '_type'
+[32mINFO[0m:     [19-06-2025 02:04:04] ::1:55812 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 500
+[32mINFO[0m:     [19-06-2025 02:04:52] Shutting down
+[32mINFO[0m:     [19-06-2025 02:04:52] Waiting for application shutdown.
+[36mDEBUG[0m:    [19-06-2025 02:04:52] Stopping component System
+[36mDEBUG[0m:    [19-06-2025 02:04:52] Stopping component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 02:04:52] Stopping component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 02:04:52] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 02:04:52] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:04:52] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:04:52] Stopping component Posthog
+[36mDEBUG[0m:    [19-06-2025 02:04:52] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:04:52] Stopping component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 02:04:52] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [19-06-2025 02:04:52] Application shutdown complete.
+[32mINFO[0m:     [19-06-2025 02:04:52] Finished server process [[36m2052[0m]
+[33mWARNING[0m:  [19-06-2025 02:04:55] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [19-06-2025 02:04:55] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [19-06-2025 02:04:55] Starting component System
+[36mDEBUG[0m:    [19-06-2025 02:04:55] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [19-06-2025 02:04:55] Starting component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 02:04:55] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:04:55] Starting component Posthog
+[36mDEBUG[0m:    [19-06-2025 02:04:55] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:04:55] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 02:04:55] Starting component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 02:04:55] Starting component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 02:04:55] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [19-06-2025 02:04:55] Started server process [[36m6640[0m]
+[32mINFO[0m:     [19-06-2025 02:04:55] Waiting for application startup.
+[32mINFO[0m:     [19-06-2025 02:04:55] Application startup complete.
+[32mINFO[0m:     [19-06-2025 02:04:55] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[31mERROR[0m:    [19-06-2025 02:05:11] '_type'
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 111, in receive
+    return self.receive_nowait()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 106, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 124, in receive
+    return receiver.item
+AttributeError: 'MemoryObjectItemReceiver' object has no attribute 'item'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 148, in call_next
+    message = await recv_stream.receive()
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\streams\memory.py", line 126, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 120, in catch_exceptions_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 177, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+  File "C:\Users\Admin\anaconda3\lib\contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_utils.py", line 82, in collapse_excgroups
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 179, in __call__
+    response = await self.dispatch_func(request, call_next)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 144, in check_http_version_middleware
+    return await call_next(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 154, in call_next
+    raise app_exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\base.py", line 141, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\fastapi\routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 134, in async_wrapper
+    return await f(*args, **kwargs)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 798, in create_collection
+    await to_thread.run_sync(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 2461, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Admin\anaconda3\lib\site-packages\anyio\_backends\_asyncio.py", line 962, in run
+    result = context.run(func, *args)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\server\fastapi\__init__.py", line 772, in process_create_collection
+    else CollectionConfigurationInternal.from_json(create.configuration)
+  File "C:\Users\Admin\anaconda3\lib\site-packages\chromadb\api\configuration.py", line 209, in from_json
+    f"Trying to instantiate configuration of type {cls.__name__} from JSON with type {json_map['_type']}"
+KeyError: '_type'
+[32mINFO[0m:     [19-06-2025 02:05:11] ::1:55842 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 500
+[32mINFO[0m:     [19-06-2025 02:07:08] Shutting down
+[32mINFO[0m:     [19-06-2025 02:07:08] Waiting for application shutdown.
+[36mDEBUG[0m:    [19-06-2025 02:07:08] Stopping component System
+[36mDEBUG[0m:    [19-06-2025 02:07:08] Stopping component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 02:07:08] Stopping component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 02:07:08] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 02:07:08] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:07:08] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:07:08] Stopping component Posthog
+[36mDEBUG[0m:    [19-06-2025 02:07:08] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:07:08] Stopping component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 02:07:08] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [19-06-2025 02:07:08] Application shutdown complete.
+[32mINFO[0m:     [19-06-2025 02:07:08] Finished server process [[36m6640[0m]
+[33mWARNING[0m:  [19-06-2025 02:07:12] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [19-06-2025 02:07:12] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [19-06-2025 02:07:12] Starting component System
+[36mDEBUG[0m:    [19-06-2025 02:07:12] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [19-06-2025 02:07:12] Starting component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 02:07:12] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:07:12] Starting component Posthog
+[36mDEBUG[0m:    [19-06-2025 02:07:12] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:07:12] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 02:07:12] Starting component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 02:07:12] Starting component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 02:07:12] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [19-06-2025 02:07:12] Started server process [[36m26064[0m]
+[32mINFO[0m:     [19-06-2025 02:07:12] Waiting for application startup.
+[32mINFO[0m:     [19-06-2025 02:07:12] Application startup complete.
+[32mINFO[0m:     [19-06-2025 02:07:12] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [19-06-2025 02:08:42] Shutting down
+[32mINFO[0m:     [19-06-2025 02:08:42] Waiting for application shutdown.
+[36mDEBUG[0m:    [19-06-2025 02:08:42] Stopping component System
+[36mDEBUG[0m:    [19-06-2025 02:08:42] Stopping component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 02:08:42] Stopping component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 02:08:42] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 02:08:42] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:08:42] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:08:42] Stopping component Posthog
+[36mDEBUG[0m:    [19-06-2025 02:08:42] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:08:42] Stopping component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 02:08:42] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [19-06-2025 02:08:42] Application shutdown complete.
+[32mINFO[0m:     [19-06-2025 02:08:42] Finished server process [[36m26064[0m]
+[33mWARNING[0m:  [19-06-2025 02:09:55] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [19-06-2025 02:09:56] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [19-06-2025 02:09:56] Starting component System
+[36mDEBUG[0m:    [19-06-2025 02:09:56] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [19-06-2025 02:09:56] Starting component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 02:09:56] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:09:56] Starting component Posthog
+[36mDEBUG[0m:    [19-06-2025 02:09:56] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 02:09:56] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 02:09:56] Starting component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 02:09:56] Starting component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 02:09:56] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [19-06-2025 02:09:56] Started server process [[36m11260[0m]
+[32mINFO[0m:     [19-06-2025 02:09:56] Waiting for application startup.
+[32mINFO[0m:     [19-06-2025 02:09:56] Application startup complete.
+[32mINFO[0m:     [19-06-2025 02:09:56] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [19-06-2025 02:13:59] ::1:64347 - "GET /api/v1/heartbeat HTTP/1.1" 200
+[32mINFO[0m:     [19-06-2025 02:13:59] ::1:64347 - "GET /favicon.ico HTTP/1.1" 404
+[32mINFO[0m:     [19-06-2025 03:31:28] Shutting down
+[32mINFO[0m:     [19-06-2025 03:31:28] Waiting for application shutdown.
+[36mDEBUG[0m:    [19-06-2025 03:31:28] Stopping component System
+[36mDEBUG[0m:    [19-06-2025 03:31:28] Stopping component SegmentAPI
+[36mDEBUG[0m:    [19-06-2025 03:31:28] Stopping component LocalExecutor
+[36mDEBUG[0m:    [19-06-2025 03:31:28] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [19-06-2025 03:31:28] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 03:31:28] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-06-2025 03:31:28] Stopping component Posthog
+[36mDEBUG[0m:    [19-06-2025 03:31:28] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-06-2025 03:31:28] Stopping component SqliteDB
+[36mDEBUG[0m:    [19-06-2025 03:31:28] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [19-06-2025 03:31:28] Application shutdown complete.
+[32mINFO[0m:     [19-06-2025 03:31:28] Finished server process [[36m11260[0m]
